@@ -4,7 +4,7 @@
 2. How to deploy
 3. What you can expect from this project
 
-![![Panik]]()
+![![Panik]](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/field_no_mesh.png)
 
 ### Introduction
 This project simulates a ICRA-Robomaster field with gazebo and ROS. The goal was to test higher-level algorithm including CV, path-finding, and decision-making. In other words, DO NOT test mechanical design or motor control on this. 
