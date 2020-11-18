@@ -1,12 +1,12 @@
 # ICRA Robomaster Simulator
-### Index: 
+## Index: 
 1. Introduction
 2. How to deploy
 3. What you can expect from this project
 
 ![![Panik]](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/field_no_mesh.png)
 
-### Introduction
+## Introduction
 This project simulates a ICRA-Robomaster field with gazebo and ROS. The goal was to test higher-level algorithm including CV, path-finding, and decision-making. In other words, DO NOT test mechanical design or motor control on this. 
 
 You can:
@@ -23,15 +23,15 @@ You can't (sadly):
 
 This is just a test field for your Computer Vision / Algorithm group. Don't expect too much.
 
-### How to deploy
+## How to deploy
 
-#### Prerequisite:
-Ubuntu
-ROS (mine is melodic)
-[ROS Package: gazebo_ros](http://wiki.ros.org/gazebo_ros), make sure you have this installed. The stand-alone Gazebo...I wished I knew how to use that thing.
-[Basic Knowledge about ROS and Linux](http://www.google.com/)
+### Prerequisite:
+- Ubuntu
+- ROS (mine is melodic)
+- [ROS Package: gazebo_ros](http://wiki.ros.org/gazebo_ros), make sure you have this installed. The stand-alone Gazebo...I wished I knew how to use that thing.
+- [Basic Knowledge about ROS and Linux](http://www.google.com/)
 
-#### Quick Start-up
+### Quick Start-up
 - git clone everthing
 - cd $(where you git clone it)
 
@@ -53,7 +53,7 @@ Terminal 3: Use this to spawn robots in your world
 $ rosrun gazebo_ros spawn_model -urdf -file (urdf_file_name).urdf -model (model_name, look for <robot name=" (something) "> in the urdf file)
 ```
 
-#### !!! Very Important !!!
+### !!! Very Important !!!
 if no model spawns or any error pops, run the following commands and relaunch gazebo_ros first:
 ```
 $ killall gzserver
@@ -61,14 +61,14 @@ $ killall gzclient
 ```
 This might save you hours of debugging.
 
-#### Slow Start-up
+### Slow Start-up
 - [field_no_mesh.world] doesn't post any data to its rostopic. It also have no sensors.
 - [field_no_bounder_no_mesh.world] have one camera and post image to rostopic: /camera1/raw_image/
 - The Gazebo - Ros connection is done by sth called "Gazebo-plugins". Look into [camera_demo.world] (with absolutly user-unfriendly comments) and [Gazebo Tutorials](http://gazebosim.org/tutorials?tut=ros_gzplugins) to figure out it works. Good Luck~
 
 - Oh BTW, ``` $ rqt_graph ``` if you want to know which topics are working.
 
-### What you can expect from this project (future plans)
+## What you can expect from this project (future plans)
 - Add other sensor into provided worlds.
 - Add official robot models
 - Add Mesh to the pillars (Probably not)
