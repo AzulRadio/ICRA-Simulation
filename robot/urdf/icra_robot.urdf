@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="icra_robot">
+
+    <link name="Untitled">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="base">
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/base.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <collision name="base">
+        <origin xyz="0.00344 -0.04639 -0.03168" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.5 0.28033 0.595"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="turret_link">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.001"/>
+        <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/>
+      </inertial>
+      <visual name="turret">
+        <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+        <geometry>
+          <mesh filename="../meshes/dae/turret.dae" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </visual>
+      <collision name="turret">
+        <origin xyz="-0.01409 -0.03767 -0.00017" rpy="1.5708 0 0"/>
+        <geometry>
+          <box size="0.44448 0.25533 0.42156"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="turret_link" type="revolute">
+      <origin xyz="0.01778 -0.07519 0.18781" rpy="0 0 0"/>
+      <parent link="Untitled"/>
+      <child link="turret_link"/>
+      <axis xyz="0 0 1.0"/>
+      <limit lower="-3.14" upper="3.14" effort="5.0" velocity="1.0"/>
+    </joint>
+
+  </robot>
