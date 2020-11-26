@@ -111,7 +111,7 @@ To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to l
 ## A Brief Manual
 
 ### 1. Nodes
-![full_graph](https://github.com/AzulRadio/ICRA-Simulation/tree/master/Resource/full_graph.png) 
+![full_graph](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/full_graph.png) 
 
 ```
 /stereo/camera/left/image_raw
