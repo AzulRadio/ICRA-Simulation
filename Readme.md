@@ -109,8 +109,10 @@ To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to l
 [back to top](#icra-robomaster-simulator)
 
 ## A Brief Manual
+<img width="400" src="https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/icra_robot.png"/>
 
 ### 1. Nodes
+
 ![full_graph](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/full_graph.png) 
 
 ```
