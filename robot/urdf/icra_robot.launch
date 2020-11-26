@@ -1,0 +1,26 @@
+<launch>
+
+
+<param name="robot_description" textfile="./icra_robot.urdf" />
+	<!-- Run a python script to the send a service call to gazebo_ros to
+	spawn a URDF robot -->
+	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model"
+	respawn="false" output="screen"
+	args="-urdf -model icra_robot -param robot_description"/>
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="./icra_robot_control.yaml" command="load"/>
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/icra_robot" args="joint_state_controller
+joint1_position_controller
+joint2_position_controller"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/icra_robot/joint_states" />
+  </node>
+
+</launch>
