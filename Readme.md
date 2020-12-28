@@ -42,6 +42,7 @@ This is a test field for your Computer Vision / Algorithm group.
  - gazebo_msgs
  - gazebo_plugins
  - image_view (optional but recommended.)
+
  Make sure you have them installed. The stand-alone Gazebo is hard to use.
 Installing them is painful. But there's more.
 - [Basic Knowledge about ROS and Linux](http://www.google.com/)
@@ -69,11 +70,18 @@ $ rosrun gazebo_ros gazebo
 
 Terminal 3: Spawn the field
 ```
-$ rosrun gazebo_ros spawn_model -urdf -file (urdf_file_name).urdf -model (model_name) // for model_name, look for <robot name=" (something) "> in the urdf file)
-
+$ rosrun gazebo_ros spawn_model -urdf -file (urdf_file_name).urdf -model (model_name) 
+// for model_name, look for <robot name=" (something) "> in the urdf file)
 // for example
 $ rosrun gazebo_ros spawn_model -urdf -file field_no_mesh.urdf -model icra_field
 ```
+Available fields: (Mesh here means texture)
+- field_no_mesh.urdf
+- field_with_mesh.urdf
+- field_no_bounder_no_mesh.urdf
+
+They all named "icra_field"
+
 Terminal 4: Spawn the robot, in /launch
 ```
 $ roslaunch ./icra_robot.launch
@@ -120,12 +128,23 @@ To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to l
 /stereo/camera/right/image_raw
 /turret_cam/image_raw
 ```
-Read image from them,  type ```sensor_msgs/Image```
+These topics output images, message type: ```sensor_msgs/Image```
 ```
-/cmd_vel 
-or /icra_robot/cmd_vel
+/icra_robot/cmd_vel
 ```
-Post velocity to them, type ```geometry_msgs/Twist```. 
+This topic read velocity inputs, message type: ```geometry_msgs/Twist```. 
+```
+rostopic pub /icra_robot/cmd_vel geometry_msgs/Twist "linear:
+  x: 0.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+// ** Press Tab can auto-fill the message type and format**
+// This command stops the robot
+```
 - linear x positive -> to the left
 - linear y positive -> to the front
 - angular(rpy) z positive -> counterclockwise
