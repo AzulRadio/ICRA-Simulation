@@ -78,8 +78,12 @@ $ rosrun gazebo_ros spawn_model -urdf -file field_no_mesh.urdf -model icra_field
 Available fields: (Mesh here means texture)
 - field_no_mesh.urdf
 - field_with_mesh.urdf
+<<<<<<< HEAD
 - field_no_bounder_no_mesh.urdf
 
+=======
+- field_no_bounder_no_mesh.urdf.urdf
+>>>>>>> bc3becb95561026139e1eb75c1ba0de53a603273
 They all named "icra_field"
 
 Terminal 4: Spawn the robot, in /launch
