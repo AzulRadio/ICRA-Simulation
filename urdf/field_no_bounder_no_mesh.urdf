@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
-  <robot name="unnamed">
+  <robot name="icra_field">
+    <link name="world"/>
 
     <link name="LA1">
       <inertial>
@@ -349,4 +350,9 @@
       <child link="Lcenter"/>
     </joint>
 
+    <joint name="fixed" type="fixed">
+      <origin xyz="0 0 0.5" rpy="0 0 0"/>
+      <parent link="world"/>
+      <child link="Lfield"/>
+    </joint>
   </robot>
