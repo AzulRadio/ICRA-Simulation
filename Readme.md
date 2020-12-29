@@ -57,7 +57,7 @@ Installing them is painful. But there's more.
 - cd $(where you git clone it)
 
 
-#### A. To start the simulation: 
+#### A. To start the simulation (quick spawn): 
 In terminal 1: 
 ``` 
 $ roscore  //you always need this first.
@@ -68,6 +68,20 @@ Terminal 2: Launch gazebo_ros **in /urdf or in /launch** (Otherwise models might
 $ rosrun gazebo_ros gazebo
 ```
 
+Terminal 3: Spawn everything. Use spawn_all.launch in /launch
+```
+$ roslaunch spawn_all.launch
+
+// By default: 
+// field_with_mesh.urdf (or change in spawn_all.launch)
+// icra_robot.urdf (spawn at x=3.5, y=1.85)
+// target_robot.urdf (spawn at x=1.0 y=0.0)
+// will spawn
+// Initial position can be changed in spawn_all.launch
+// Read comments in the launch file.
+```
+
+#### B. Or spawn the models seperately.
 Terminal 3: Spawn the field
 ```
 $ rosrun gazebo_ros spawn_model -urdf -file (urdf_file_name).urdf -model (model_name) 
@@ -86,7 +100,7 @@ Terminal 4: Spawn the robot, in /launch
 ```
 $ roslaunch ./icra_robot.launch
 ```
-#### B. To start a demo world.
+#### C. To start a demo world.
 Demo world provides a gentle intro to gazebo-ros simulations. To start a world, just:
 ```
 $ rosrun gazebo_ros gazebo (world_name.world)
@@ -119,7 +133,17 @@ To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to l
 ## A Brief Manual
 <img width="400" src="https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/icra_robot.png"/>
 
-### 1. Nodes
+### 1. Models
+```icra_robot.urdf```:
+- Joint Control (manually enable required, see "3.urdf-plugins" below)
+- Linear/Angular Velocity Control
+- Stereo Cam
+- Turret Cam
+
+```target_robot.urdf```:
+- Linear/Angular Velocity Control
+
+### 2. Nodes
 
 ![full_graph](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/full_graph.png) 
 
@@ -164,19 +188,19 @@ All three types are standard ros types and descriptions can be found at [here](h
 ```/robot_state_publisher``` convert joint states to ``/tf`` messages and can be sent to [Rviz](http://wiki.ros.org/rviz)
 
 
-### 2. urdf
+### 3. urdf - plugins
 #### Joint Control
 Joint control is off by default to save computational resourses. 
 To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to line 153
 Notice that keep Joint Control enabled will force you to restart Gazebo if icra_robot is deleted
 #### Cameras
 In /urdf/icra_robot.urdf, ``<gazebo>`` is where the plugins at. Modify the settings there.
-When changing baseline length of the stereo_cam, change ``<pose> `` (also xyzrpy) for both cameras and ``<hackBaseline>`` at the same time.
+When changing baseline length of the stereo_cam, change ``<pose>`` (also xyzrpy) for both cameras and ``<hackBaseline>`` at the same time.
 Difference between cams = length of the baseline.
-### 3. PID controller
+### 4. PID controller
 in /launch ``icra_robot_control.yaml``, change kp, ki, and kd.
 
-### 4. Textures
+### 5. Textures
 Replace /mesh/dae/icra_field_texture.png with other pictures to change texture. Texture is needed for stereo SLAM.
 
 ![![Stonks]](https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/field_with_mesh.png)

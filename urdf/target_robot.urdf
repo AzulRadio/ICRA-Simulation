@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
   <robot name="target_robot">
-
+    <!-- Change all "target_robot" to desired new name (2 total) -->
     <link name="base_link">
       <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -80,7 +80,7 @@
 
      <gazebo>
        <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
-         <commandTopic>/icra_robot/cmd_vel</commandTopic>
+         <commandTopic>/target_robot/cmd_vel</commandTopic>
          <odometryTopic>odom</odometryTopic>
          <odometryFrame>odom</odometryFrame>
          <odometryRate>20.0</odometryRate>
