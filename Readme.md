@@ -81,6 +81,8 @@ $ roslaunch spawn_all.launch
 // Read comments in the launch file.
 ```
 
+Start your usage or see [ROS](#ROS) part below.
+
 #### B. Or spawn the models seperately.
 Terminal 3: Spawn the field
 ```
@@ -100,6 +102,9 @@ Terminal 4: Spawn the robot, in /launch
 ```
 $ roslaunch ./icra_robot.launch
 ```
+
+Start your usage or see [ROS](#ROS) part below.
+
 #### C. To start a demo world.
 Demo world provides a gentle intro to gazebo-ros simulations. To start a world, just:
 ```
@@ -128,19 +133,44 @@ To turn it on, edit ```/urdf/icra_robot.urdf``` and uncomment from line 123 to l
 - ``` $ roslaunch ./launch/image_view.launch ``` is a quick way to view stereo (2 cams)
 - ```$ rostopic pub``` can be used for quick messages to topics.
 
+### ROS
+Example codes are provided in /src for reference.
+**get_model_state.cpp** :
+- example about how to read ground truth position for robot
+- check [gazebo_msgs/ModelStates Message](http://docs.ros.org/en/melodic/api/gazebo_msgs/html/msg/ModelStates.html) for the format of the message.
+
+#### ROS Code Deploy
+- cd $(where you clone this repo)
+- (any folder works as long as there's a src/ folder)
+
+```
+$ cd src
+$ catkin_init_workspace
+$ cd ..
+$ catkin_make
+```
+
+done!
+
+to run the node:
+
+```
+rosrun get_model_state get_model_state_node
+```
+
 [back to top](#icra-robomaster-simulator)
 
 ## A Brief Manual
 <img width="400" src="https://github.com/AzulRadio/ICRA-Simulation/blob/master/Resource/icra_robot.png"/>
 
 ### 1. Models
-```icra_robot.urdf```:
+**icra_robot.urdf**:
 - Joint Control (manually enable required, see "3.urdf-plugins" below)
 - Linear/Angular Velocity Control
 - Stereo Cam
 - Turret Cam
 
-```target_robot.urdf```:
+**target_robot.urdf**:
 - Linear/Angular Velocity Control
 
 ### 2. Nodes
