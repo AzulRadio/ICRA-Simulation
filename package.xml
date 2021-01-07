@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>get_model_state</name>
+  <name>irm_icra_simulator</name>
   <version>0.0.0</version>
-  <description>The get_model_state package</description>
+  <description>iRM ICRA Simulator ROS Package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -49,16 +49,21 @@
   <!-- Use doc_depend for packages you need only for building documentation: -->
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nodelet</build_depend>
   <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>sensor_msgs</build_depend>
   <build_depend>std_msgs</build_depend>
-  <build_export_depend>roscpp</build_export_depend>
-  <build_export_depend>std_msgs</build_export_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>shape_msgs</build_depend>
+
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nodelet</exec_depend>
   <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-
-  <!-- The export tag contains other, unspecified, tags -->
-  <export>
-    <!-- Other tools can request additional information be placed here -->
-
-  </export>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>shape_msgs</exec_depend>
 </package>
