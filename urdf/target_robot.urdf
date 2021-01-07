@@ -11,7 +11,7 @@
       <visual name="base">
         <origin xyz="-0.00344 0.04636 0" rpy="1.5708 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/base_link.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/base_link.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision name="base">
@@ -31,7 +31,7 @@
       <visual name="turret_pitch">
         <origin xyz="0.02853 -0.05461 0.05365" rpy="0 1.5708 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/turret_pitch.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/turret_pitch.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision name="turret_pitch">
@@ -51,7 +51,7 @@
       <visual name="turret_yaw">
         <origin xyz="0 0 0" rpy="1.5708 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/turret_yaw.dae" scale="0.001 0.001 0.001"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/turret_yaw.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
       <collision name="turret_yaw">

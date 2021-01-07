@@ -12,7 +12,7 @@
       <visual name="A1">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A1.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A1.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A1">
@@ -32,7 +32,7 @@
       <visual name="A2">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A2.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A2.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A2">
@@ -52,7 +52,7 @@
       <visual name="A3">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A3.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A3.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A3">
@@ -72,7 +72,7 @@
       <visual name="A4">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A4.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A4.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A4">
@@ -92,7 +92,7 @@
       <visual name="A5">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A5.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A5.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A5">
@@ -112,7 +112,7 @@
       <visual name="A6">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/A6.dae" scale="0.5 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/A6.dae" scale="0.5 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="A6">
@@ -132,7 +132,7 @@
       <visual name="B1">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/B1.dae" scale="0.4 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/B1.dae" scale="0.4 0.1 0.2"/>
         </geometry>
       </visual>
       <collision name="B1">
@@ -152,7 +152,7 @@
       <visual name="B2">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/B2.dae" scale="0.4 0.1 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/B2.dae" scale="0.4 0.1 0.2"/>
         </geometry>
         <material name="Material"/>
       </visual>
@@ -253,7 +253,7 @@
       <visual name="W1">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/W1.dae" scale="0.1025 2.445 0.5"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/W1.dae" scale="0.1025 2.445 0.5"/>
         </geometry>
       </visual>
       <collision name="W1">
@@ -273,7 +273,7 @@
       <visual name="W2">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/W2.dae" scale="0.1025 2.445 0.5"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/W2.dae" scale="0.1025 2.445 0.5"/>
         </geometry>
       </visual>
       <collision name="W2">
@@ -293,7 +293,7 @@
       <visual name="W3">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/W3.dae" scale="4.04 0.1025 0.5"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/W3.dae" scale="4.04 0.1025 0.5"/>
         </geometry>
       </visual>
       <collision name="W3">
@@ -313,7 +313,7 @@
       <visual name="W4">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/W4.dae" scale="4.04 0.1025 0.5"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/W4.dae" scale="4.04 0.1025 0.5"/>
         </geometry>
       </visual>
       <collision name="W4">
@@ -333,7 +333,7 @@
       <visual name="center">
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="../meshes/dae/center.dae" scale="0.125 0.125 0.2"/>
+          <mesh filename="package://irm_icra_simulator/meshes/dae/center.dae" scale="0.125 0.125 0.2"/>
         </geometry>
       </visual>
       <collision name="center">

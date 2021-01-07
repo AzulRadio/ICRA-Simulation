@@ -1,7 +1,7 @@
 <launch>
     <!-- spawn the field, change "textfile" to spawn a different field -->
-    <param name="field_model" textfile="../urdf/field_with_mesh.urdf" />
-    <param name="target_model" textfile="../urdf/target_robot.urdf" />
+    <param name="field_model" textfile="..//urdf/field_with_mesh.urdf" />
+    <param name="target_model" textfile="..//urdf/target_robot.urdf" />
     <node name="field_spawner" pkg="gazebo_ros" type="spawn_model"
 	respawn="false" output="screen"
         args="-urdf -model icra_field -param field_model"/>
