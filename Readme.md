@@ -56,62 +56,10 @@ Installing them is painful. But there's more.
 
 - cd $(where you git clone it)
 
+#### To start the simulation (quick spawn): 
 
-#### A. To start the simulation (quick spawn): 
-In terminal 1: 
-``` 
-$ roscore  //you always need this first.
-```
+Refer to installation.md
 
-Terminal 2: Launch gazebo_ros **in /urdf or in /launch** (Otherwise models might not displayed.)
-```
-$ rosrun gazebo_ros gazebo
-```
-
-Terminal 3: Spawn everything. Use spawn_all.launch in /launch
-```
-$ roslaunch spawn_all.launch
-
-// By default: 
-// field_with_mesh.urdf (or change in spawn_all.launch)
-// icra_robot.urdf (spawn at x=3.5, y=1.85)
-// target_robot.urdf (spawn at x=1.0 y=0.0)
-// will spawn
-// Initial position can be changed in spawn_all.launch
-// Read comments in the launch file.
-```
-
-Start your usage or see [ROS](#ROS) part below.
-
-#### B. Or spawn the models seperately.
-Terminal 3: Spawn the field
-```
-$ rosrun gazebo_ros spawn_model -urdf -file (urdf_file_name).urdf -model (model_name) 
-// for model_name, look for <robot name=" (something) "> in the urdf file)
-// for example
-$ rosrun gazebo_ros spawn_model -urdf -file field_no_mesh.urdf -model icra_field
-```
-Available fields: (Mesh here means texture)
-- field_no_mesh.urdf
-- field_with_mesh.urdf
-- field_no_bounder_no_mesh.urdf
-
-They all named "icra_field"
-
-Terminal 4: Spawn the robot, in /launch
-```
-$ roslaunch ./icra_robot.launch
-```
-
-Start your usage or see [ROS](#ROS) part below.
-
-#### C. To start a demo world.
-Demo world provides a gentle intro to gazebo-ros simulations. To start a world, just:
-```
-$ rosrun gazebo_ros gazebo (world_name.world)
-//for example
-$ rosrun gazebo_ros gazebo stereo_demo.world
-```
 ### !!! Very Important !!!
 1. if no model spawns or any error pops, run the following commands and relaunch gazebo_ros first:
 ```
