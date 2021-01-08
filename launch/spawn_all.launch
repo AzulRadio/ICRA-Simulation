@@ -1,13 +1,17 @@
 <launch>
     <!-- spawn the field, change "textfile" to spawn a different field -->
-    <param name="field_model" textfile="..//urdf/field_with_mesh.urdf" />
-    <param name="target_model" textfile="..//urdf/target_robot.urdf" />
+    <param name="field_model" textfile="$(find irm_icra_simulator)/urdf/field_with_mesh.urdf" />
+    <param name="target_model" textfile="$(find irm_icra_simulator)/urdf/target_robot.urdf" />
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    </include>
+
     <node name="field_spawner" pkg="gazebo_ros" type="spawn_model"
 	respawn="false" output="screen"
         args="-urdf -model icra_field -param field_model"/>
     
     <!-- spawn the robot, change x_coor and y_coor to control the initial position -->
-    <include file="./icra_robot.launch">
+    <include file="$(find irm_icra_simulator)/launch/icra_robot.launch">
         <arg name="x_coor" value="3.5" />
         <arg name="y_coor" value="1.875"/>
     </include>
